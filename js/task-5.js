@@ -9,8 +9,9 @@ function getRandomHexColor() {
 }
 
 const handleClick = function changeColor() {
-  bodyElement.style.backgroundColor = getRandomHexColor();
-  spanElement.textContent = getRandomHexColor();
+  let randomColor = getRandomHexColor();
+  bodyElement.style.backgroundColor = randomColor;
+  spanElement.textContent = randomColor;
   return;
 };
 

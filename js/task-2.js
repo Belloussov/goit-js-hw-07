@@ -13,22 +13,16 @@ const images = [
   },
 ];
 const list = document.querySelector(".gallery");
-list.style.display = "flex";
-list.style.flexDirection = "colum";
-list.style.justifyContent = "centr";
-list.style.width = "1440px";
-list.style.paddingLeft = "144px";
+list.classList.add("gallery-position");
 
 const listItem = images.map((image) => {
   const itemsLi = document.createElement("li");
-  itemsLi.classList.add("image-item");
-
   const imageItem = document.createElement("img");
+
   imageItem.src = image.url;
   imageItem.alt = image.alt;
-  imageItem.width = 360;
-  imageItem.height = 300;
-  imageItem.style.margin = "12px";
+
+  imageItem.classList.add("img-position");
 
   itemsLi.append(imageItem);
 

@@ -17,11 +17,11 @@ function handleClick() {
 
 function createBoxes(amount) {
   boxesContainer.innerHTML = "";
-  let boxsize = 30;
-  for (let i = 1; i <= amount; i += 1) {
+  let boxSize = 30;
+  for (let i = 0; i <= amount; i += 1) {
     const newDiv = `<div style="width: ${boxsize}px; height: ${boxsize}px; background: ${getRandomHexColor()}"></div>`;
-    boxes.insertAdjacentHTML("beforeend", newDiv);
-    boxsize += 10;
+    boxesContainer.insertAdjacentHTML("beforeend", newDiv);
+    boxSize += 10;
   }
 }
 
