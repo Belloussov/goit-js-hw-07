@@ -17,7 +17,7 @@ ul,
 li {
   list-style-type: none;
 }
-.gallery-position {
+.gallery {
   display: flex;
   justify-content: center;
   align-items: center;

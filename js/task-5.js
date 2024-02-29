@@ -8,7 +8,7 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const handleClick = function changeColor() {
+const handleClick = function () {
   let randomColor = getRandomHexColor();
   bodyElement.style.backgroundColor = randomColor;
   spanElement.textContent = randomColor;

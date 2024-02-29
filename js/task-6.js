@@ -11,15 +11,20 @@ function handleClick() {
     createBoxes(inputElement.value);
     inputElement.value = "";
   } else {
-    alert("Please enter a number between 1 and 100.");
+    const feedbackMessage = document.createElement("span");
+    feedbackMessage.textContent = "1 - 100!";
+    createButton.insertAdjacentElement("afterend", feedbackMessage);
+    setTimeout(() => {
+      feedbackMessage.remove();
+    }, 2000);
   }
 }
 
 function createBoxes(amount) {
-  boxesContainer.innerHTML = "";
+  destroyBoxes();
   let boxSize = 30;
-  for (let i = 0; i <= amount; i += 1) {
-    const newDiv = `<div style="width: ${boxsize}px; height: ${boxsize}px; background: ${getRandomHexColor()}"></div>`;
+  for (let i = 0; i < amount; i += 1) {
+    const newDiv = `<div style="width: ${boxSize}px; height: ${boxSize}px; background: ${getRandomHexColor()}"></div>`;
     boxesContainer.insertAdjacentHTML("beforeend", newDiv);
     boxSize += 10;
   }
@@ -27,7 +32,6 @@ function createBoxes(amount) {
 
 function destroyBoxes() {
   boxesContainer.innerHTML = "";
-  inputElement.value = "";
 }
 
 function getRandomHexColor() {
